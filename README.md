@@ -1,7 +1,9 @@
-# TechBubble Iot JumpWay WebSockets MQTT Samples
+# Iot JumpWay WebSockets MQTT Samples
 ======================================
 
-WebSockets MQTT examples that allows developers to communicate with the from application to devices via the TechBubble IoT JumpWay MQTT Broker.
+TechBubble Tecnologies’ Internet of Things (IoT) JumpWay is a web platform that allows anyone to create code, and control devices like Raspberry Pi’s and Micro-controllers, from your computer, smart phone and web/mobile/desktop applications.
+
+The WebSockets MQTT examples allow developers to communicate from applications and send commands to devices via the TechBubble IoT JumpWay MQTT Broker.
 
 # Before You Begin
 
