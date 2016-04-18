@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>TechBubble IoT JumpWay WebSockets MQTT Sample</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="media/css/styles.css">
+	</head>
+	<body>
+	
+		<section id="container">	
+		
+			<img src="media/images/beta-testers.jpg" class="banner" />
+		
+			<h2>JUMPWAY APPLICATION CONNECTION STATUS</h2>
+			<div id="status" class="scrollerSmaller"></div>
+			<p>&nbsp;&nbsp;</p> 
+			
+			<a href="javascript:void(0)" id="subscribe" class="btn">SUBSCRIBE</a>
+			<a href="javascript:void(0)" id="publishon" class="btn">PUBLISH ON</a>
+			<a href="javascript:void(0)" id="publishoff" class="btn">PUBLISH OFF</a>
+			
+			<p>&nbsp;&nbsp;</p> 
+			<h2>JUMPWAY APPLICATION MESSAGES</h2>
+			<div id="messages" class="scrollerSmall"></div>
+			<p>&nbsp;&nbsp;</p> 
+			
+		</section>	
+	
+		<script src="media/js/jquery.min.js" type="text/javascript"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js" type="text/javascript"></script>
+		<script src="media/js/mqttws31.js" type="text/javascript"></script>
+		<script src="media/js/iotJumpWay.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		
+			var mqttOptions = {
+				locationID: "YOURLOCATIONID",
+				applicationID: "YOURAPPLICATIONID",
+				applicationName: "YOURAPPLICATIONNAME",
+				userName: "YOURAPPLICATIONMQTTUSERNAME",
+				passwd: "YOURAPPLICATIONMQTTPASSWORD"
+			};
+
+			$(document).ready(function() {			
+				websocketclient.connect(mqttOptions);			
+			});
+			
+			$('body').on('click','#subscribe',function(){			
+				websocketclient.subscribeToDeviceCommands( {
+					locationID: 1,
+					zoneID: 1,
+					deviceID: 1
+				});			
+			}); 
+			
+			$('body').on('click','#publishon',function(){
+				
+				websocketclient.publishToDeviceCommands({
+					locationID: 1,
+					zoneID: 1,
+					deviceID: 1,
+					message: '{"Actuator":"LED","ActuatorID":1,"Command":"TOGGLE","CommandValue":"ON"}'
+				});
+				
+			});  
+			
+			$('body').on('click','#publishoff',function(){ 
+				
+				websocketclient.publishToDeviceCommands({
+					locationID: 1,
+					zoneID: 1,
+					deviceID: 1,
+					message: '{"Actuator":"LED","ActuatorID":1,"Command":"TOGGLE","CommandValue":"OFF"}'
+				});
+				
+			}); 
+
+		</script>
+	</body>
+</html>
