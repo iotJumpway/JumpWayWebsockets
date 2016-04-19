@@ -1,17 +1,13 @@
 
       
-	/**
-	 * @author Adam Milton-Barker <adammiltonbarker@gmail.com>
-	 * @copyright TechBubble Technologies 2014/2016 <iot.techbubbletechnologies.com>
-	 */
+/**
+ * @author Adam Milton-Barker <adammiltonbarker@gmail.com>
+ * @copyright TechBubble Technologies 2014/2016 <iot.techbubbletechnologies.com>
+ */
 
-var websocketclient = {
+var iotJumpWayWebSoc = {
 
     'client': null,
-    'lastMessageId': 1,
-    'lastSubId': 1,
-    'subscriptions': [],
-    'messages': [],
     'connected': false,
     'host': 'iot.techbubbletechnologies.com',
     'port': 9001,
@@ -46,19 +42,19 @@ var websocketclient = {
 
     'onConnect': function () {
 		
-        websocketclient.connected = true;
+        this.connected = true;
         $('#status').text('Connected to TechBubble IoT JumpWay');
     },
 
     'onFail': function (message) {
 		
-        websocketclient.connected = false;
+        this.connected = false;
         $('#status').text('Connect failed: ' + message.errorMessage);
 		
     },
 
     'onConnectionLost': function (responseObject) {
-        websocketclient.connected = false;
+        this.connected = false;
         if (responseObject.errorCode !== 0) {
 			$('#status').text('Connect lost: ' + responseObject.errorMessage);
         }

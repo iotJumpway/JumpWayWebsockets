@@ -41,21 +41,25 @@
 				passwd: "YOURAPPLICATIONMQTTPASSWORD"
 			};
 
-			$(document).ready(function() {			
-				websocketclient.connect(mqttOptions);			
+			$(document).ready(function() {
+				
+				iotJumpWayWebSoc.connect(mqttOptions);
+				
 			});
 			
-			$('body').on('click','#subscribe',function(){			
-				websocketclient.subscribeToDeviceCommands( {
+			$('body').on('click','#subscribe',function(){
+				
+				iotJumpWayWebSoc.subscribeToDeviceCommands( {
 					locationID: 1,
 					zoneID: 1,
 					deviceID: 1
-				});			
+				});
+				
 			}); 
 			
 			$('body').on('click','#publishon',function(){
 				
-				websocketclient.publishToDeviceCommands({
+				iotJumpWayWebSoc.publishToDeviceCommands({
 					locationID: 1,
 					zoneID: 1,
 					deviceID: 1,
@@ -66,7 +70,7 @@
 			
 			$('body').on('click','#publishoff',function(){ 
 				
-				websocketclient.publishToDeviceCommands({
+				iotJumpWayWebSoc.publishToDeviceCommands({
 					locationID: 1,
 					zoneID: 1,
 					deviceID: 1,
