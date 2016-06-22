@@ -1,6 +1,8 @@
 # Iot JumpWay WebSockets MQTT Samples
 ======================================
 
+PLEASE NOTE: Due to a conflict with the security fix for the recent Padding Oracle in OpenSSL CBC Ciphersuites, this feature is currently unavalable.
+
 TechBubble Tecnologies Internet of Things (IoT) JumpWay is a web platform that allows anyone to connect IoT devices such as Raspberry Pi, Intel Galileo, Arduino, ESP8266 and even phones,PCs, Macs and laptops to the Internet of Things. The various IoT JumpWay libraries and samples allow you to connect devices and sensors to the IoT JumpWay and control/monitor sensors/actuators and data to and from the devices.
 
 The WebSockets MQTT examples allow developers to communicate from web and desktop applications by sending commands to devices via the TechBubble IoT JumpWay MQTT Broker.
