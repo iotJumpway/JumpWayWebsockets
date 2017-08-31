@@ -7,9 +7,11 @@ The TechBubble Technologies IoT JumpWay WebSockets MQTT examples allow developer
 
 # Before You Begin
 
-Make sure that you have a device already connected to the TechBubble IoT JumpWay. If you are using the LED sample you will need to install the following library and set up a device with your LED.
+Make sure that you have a device already connected to the TechBubble IoT JumpWay. If you are new to using the TechBubble IoT JumpWay, you can choose from one of the following starter tutorials which will help you get on your way.
 
-  https://github.com/AdamMiltonBarker/TechBubble-Iot-JumpWay-Python-MQTT
+- [IoT JumpWay Raspberry Pi Basic LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-RPI-Examples/tree/master/Basic-LED/Python "IoT JumpWay Raspberry Pi Basic LED Example")
+
+- [IoT JumpWay Intel® Edison Basic LED Example](https://github.com/TechBubbleTechnologies/IoT-JumpWay-Intel-Examples/tree/master/Intel-Edison/Basic-LED/Python "IoT JumpWay Intel® Edison Basic LED Example")
   
 # Installation
 
